@@ -9,8 +9,10 @@ import (
 	pb "jimmykiang/grpcCalc/calculator/proto"
 )
 
-//var addr string = "grpc-calc-service:50051"
-var addr string = "127.0.0.1:50051"
+// for docker
+var addr string = "grpcserver:50051"
+
+//var addr string = "127.0.0.1:50051"
 
 func main() {
 	conn, err := grpc.Dial(addr, grpc.WithTransportCredentials(insecure.NewCredentials()))

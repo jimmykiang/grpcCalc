@@ -1,0 +1,10 @@
+version: '3'
+services:
+  grpcserver:
+    image: grpcserver
+    ports:
+      - '50051:50051'
+  grpcclient:
+    depends_on:
+      - grpcserver
+    image: grpcclient

@@ -11,9 +11,10 @@ import (
 	"net"
 )
 
-var addr string = "0.0.0.0:50051"
+//var addr string = "0.0.0.0:50051"
 
-//var addr string = ":50051"
+// for docker
+var addr string = ":50051"
 
 func main() {
 	lis, err := net.Listen("tcp", addr)
