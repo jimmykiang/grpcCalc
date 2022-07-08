@@ -4,16 +4,17 @@
 package main
 
 import (
-	"log"
-	"net"
-
-	pb "jimmykiang/grpcCalc/calculator/proto"
-
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
+	pb "jimmykiang/grpcCalc/calculator/proto"
+	"log"
+	"net"
 )
 
-var addr string = "0.0.0.0:50051"
+//var addr string = "0.0.0.0:50051"
+
+// for docker
+var addr string = ":50051"
 
 func main() {
 	lis, err := net.Listen("tcp", addr)

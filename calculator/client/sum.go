@@ -9,7 +9,7 @@ import (
 
 func doSum(c pb.CalculatorServiceClient) {
 	log.Println("doSum was invoked")
-	r, err := c.Sum(context.Background(), &pb.SumRequest{FirstNumber: 1, SecondNumber: 1})
+	r, err := c.Sum(context.Background(), &pb.SumRequest{FirstNumber: 4, SecondNumber: 5})
 
 	if err != nil {
 		log.Fatalf("Could not sum: %v\n", err)

@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grpcserver
+spec:
+  selector:
+    matchLabels:
+      app: grpcserver
+  replicas: 1
+  template: # template for the pods
+    metadata:
+      labels:
+        app: grpcserver
+    spec:
+      containers:
+        - name: queue
+          image: jugon666/grpcserver:latest
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: grpcserver
+
+spec:
+  # This defines which pods are going to be represented by this Service
+  # The service becomes a network endpoint for either other services
+  # or maybe external users to connect to (eg browser)
+  selector:
+    app: grpcserver
+
+  ports:
+    - name: http
+      port: 50051
+
+  type: ClusterIP
+

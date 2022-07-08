@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grpcclient
+spec:
+  selector:
+    matchLabels:
+      app: grpcclient
+  replicas: 1
+  template: # template for the pods
+    metadata:
+      labels:
+        app: grpcclient
+    spec:
+      containers:
+        - name: queue
+          image: jugon666/grpcclient:latest
+
+
